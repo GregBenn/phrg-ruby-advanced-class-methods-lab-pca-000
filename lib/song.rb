@@ -50,7 +50,7 @@ class Song
   def self.new_from_filename(file)
     split_file = file.split(" - ")
     artist_name = split_file[0]
-    song_name = split_file[1].gsub(".mp3","")
+    song_name = split_file[1].chomp(".mp3")
     song = self.new
     song.name = song_name
     song.artist_name = artist_name
@@ -61,7 +61,7 @@ class Song
   def self.create_from_filename(file)
     split_file = file.split(" - ")
     artist_name = split_file[0]
-    song_name = split_file[1].gsub(".mp3","")
+    song_name = split_file[1].chomp(".mp3")
     song = self.create
     song.name = song_name
     song.artist_name = artist_name
